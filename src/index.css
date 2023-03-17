@@ -49,3 +49,7 @@ h1{
   font-size: 50px;
   text-transform: uppercase;
 }
+
+input, button{
+  font-size: 32px;
+}
