@@ -5,6 +5,7 @@ import useSound from 'use-sound';
 
 import loseSound from '../sounds/lose.mp3';
 import winSound from '../sounds/win.mp3';
+import { ReturnBar } from "../components/ReturnBar";
 
 export const MemoTest = () => {
   const [guessed, setGuessed] = useState([]);
@@ -74,6 +75,7 @@ export const MemoTest = () => {
 
   return (
       <>
+        <ReturnBar />
         <h1>Memorama</h1>
         <h2 style={{
           marginBottom: '20px',

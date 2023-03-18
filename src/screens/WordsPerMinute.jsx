@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { ReturnBar } from "../components/ReturnBar";
 import { Form } from "../components/words";
 import { Words } from "../helpers"
 
@@ -38,41 +39,44 @@ export const WordsPerMinute = () => {
   }
 
   return (
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      gap: "12",
-      textAlign: "center",
-     }}>
-      {
-        Boolean(time) && <h1 style={{
-        fontSize: "60px",
-        color: "#fff",
-        marginBottom: "20px",
-        textDecoration: "underline",
-       }}>{word}</h1>
-      }
-      <h2 style={{
-        fontSize: "42px",
-      }}>Characters typed: {characterCount}</h2>
-      <h3 style={{
-        fontSize: "32px",
-      }}>Remaining time: {time}</h3>
-      <h3 style={{
-        fontSize: "32px",
-        marginBottom: "24px",
-      }}>Errors: {errors}</h3>
-      {
-        time !== 0 ? <Form Words={Words} word={word} setWord={setWord} characterCount={characterCount} setCharacterCount={setCharacterCount} errors={errors} setErrors={setErrors}/> : <button style={{
-          width: '200px',
-          margin: '0 auto',
-          borderRadius: '8px',
-          padding: '8px',
-          backgroundColor: '#0d6efd',
-          border: '0',
-          cursor: 'pointer',
-       }} onClick={() => setTime(60)}>Play</button>
-      }
-    </div>
+    <>
+      <ReturnBar />
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "12",
+        textAlign: "center",
+      }}>
+        {
+          Boolean(time) && <h1 style={{
+          fontSize: "60px",
+          color: "#fff",
+          marginBottom: "20px",
+          textDecoration: "underline",
+        }}>{word}</h1>
+        }
+        <h2 style={{
+          fontSize: "42px",
+        }}>Characters typed: {characterCount}</h2>
+        <h3 style={{
+          fontSize: "32px",
+        }}>Remaining time: {time}</h3>
+        <h3 style={{
+          fontSize: "32px",
+          marginBottom: "24px",
+        }}>Errors: {errors}</h3>
+        {
+          time !== 0 ? <Form Words={Words} word={word} setWord={setWord} characterCount={characterCount} setCharacterCount={setCharacterCount} errors={errors} setErrors={setErrors}/> : <button style={{
+            width: '200px',
+            margin: '0 auto',
+            borderRadius: '8px',
+            padding: '8px',
+            backgroundColor: '#0d6efd',
+            border: '0',
+            cursor: 'pointer',
+        }} onClick={() => setTime(60)}>Play</button>
+        }
+      </div>
+    </>
   )
 }

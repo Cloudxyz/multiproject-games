@@ -30,15 +30,17 @@ img{
 }
 
 body {
-  margin: auto;
+  margin: auto !important;
   display: flex;
   place-items: center;
   max-width: 800px;
   min-height: 100vh;
+  background-color: #242424 !important;
 }
 
 #root{
   width: 100%;
+  background-color: #242424;
 }
 
 main {
@@ -52,4 +54,98 @@ h1{
 
 input, button{
   font-size: 32px;
+}
+
+.imgPokemon{
+  animation: slide-right 1s forwards;
+  filter: brightness(0) invert(1);
+}
+
+.showPokemon {
+  animation: fadeout 1s ease;
+}
+
+.textPokemon{
+  animation: slide-left 1s forwards;
+}
+
+.inputPokemon{
+  animation: slide-right 1s forwards;
+}
+
+.returnLink{
+  display: block;
+  text-decoration: none;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.returnLink:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+.navBar{
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.linkNavBar{
+  border: 1px solid #fff;
+  display: block;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-top-right-radius:15px;
+  border-bottom-left-radius:15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btnTry{
+  transition: all 0.2s ease-in-out;
+}
+
+.linkNavBar:hover .btnTry{
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+
+@keyframes fadeout {
+  from {
+    filter: brightness(0) invert(1);
+  }
+  to {
+    filter: none;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
